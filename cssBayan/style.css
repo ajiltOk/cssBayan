@@ -1,0 +1,8 @@
+.container {
+    margin: auto;
+    max-width: 300px;
+}
+
+.block {
+    border-top: 1px solid gray;
+}
