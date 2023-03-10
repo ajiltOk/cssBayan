@@ -1,8 +1,60 @@
+body {
+    background-color: #F5DEB3;
+    color: blue;
+}
+
 .container {
     margin: auto;
-    max-width: 300px;
+    max-width: 900px;
+}
+
+.container:hover {
+    cursor: pointer;
+    color: black;
+}
+
+h1 {
+    color: black;
+}
+
+p {
+    color: white;
 }
 
 .block {
     border-top: 1px solid gray;
+}
+
+.block:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.block_title {
+    font-size: 21px;
+    display: block;
+    cursor: pointer;
+    padding-bottom: 15px;
+    transition: color 0.2s ease-out;
+}
+
+.block:hover .block_image {
+    display: block;
+    color: black;
+}
+
+.block_check {
+    appearance: none;
+}
+
+.block_check:checked ~ .block_image {
+    display: block;
+}
+
+.block_check:checked ~ .block_title {
+    color: black;
+}
+
+.block_image {
+    display: none;
 }
