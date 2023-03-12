@@ -5,12 +5,20 @@ body {
 
 .container {
     margin: auto;
-    max-width: 900px;
+    max-width: 320px;
 }
 
-.container:hover {
+.accordion:hover {
     cursor: pointer;
     color: black;
+    overflow: hidden;
+}
+
+.accordion:hover .cross {
+    height: 18px;
+    width: 40px;
+    display: flex;
+    justify-content: space-around;
 }
 
 h1 {
@@ -19,6 +27,7 @@ h1 {
 
 p {
     color: white;
+    font-size: 26px;
 }
 
 .block {
@@ -31,15 +40,43 @@ p {
 }
 
 .block_title {
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
     font-size: 21px;
     display: block;
     cursor: pointer;
-    padding-bottom: 15px;
     transition: color 0.2s ease-out;
+    font-weight: 700;
+}
+
+.cross {
+    display: none;
+}
+
+.line_1, .line_2 {
+    background: black;
+    height: 18px; 
+    width: 3px;
+}
+
+.line_1 {
+    transform: translateX(20px);
+}
+
+.line_2 {
+    transform: rotate(-90deg);
 }
 
 .block:hover .block_image {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #A9A9A9;
     color: black;
 }
 
@@ -48,13 +85,30 @@ p {
 }
 
 .block_check:checked ~ .block_image {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #A9A9A9;
 }
 
 .block_check:checked ~ .block_title {
     color: black;
 }
 
+.block_check:checked +  {
+    transform: rotate(45deg);
+}
+
 .block_image {
     display: none;
+}
+
+img {
+    width: 80%;
+}
+
+.line {
+    height: 15px;
+    width: 100%;
+    background-color: #F5DEB3;
 }
