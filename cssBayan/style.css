@@ -5,203 +5,141 @@ body {
 
 .container {
     margin: auto;
-    max-width: 300px;
+    max-width: 60%;
+}
+
+.task-name {
+    color: black;
 }
 
 .accordion:hover {
     cursor: pointer;
     color: black;
-    overflow: hidden;
 }
 
-.accordion:hover .cross {
-    width: 40px;
-    display: flex;
-    justify-content: space-around;
-}
-
-h1 {
-    color: black;
-    padding: 20px 0;
-    margin: 0;
-}
-
-p {
-    color: white;
-    font-size: 26px;
-    margin: 5px 0;
-}
-
-.block {
-    border-top: 1px solid gray;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.block:hover {
+.block_title:hover {
     cursor: pointer;
-    color: black;
+    overflow: visible;
+    max-height: 70vh;
 }
 
 .block_title {
-    padding-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    display: block;
+    cursor: pointer;
+    max-height: 5.5vh;
+    overflow: hidden;
+    border-top: 0.2vh solid gray;
+    transition: all 0.3s ease-out;
+    padding: 2vh 0;
 }
 
 .title {
-    font-size: 21px;
     display: block;
     cursor: pointer;
     transition: color 0.2s ease-out;
-    font-weight: 700;
+    margin: 0;
 }
 
-.plus {
-    height: 20px;
-    width: 20px;
+.subtitle {
+    margin: 0;
+    color: white;
+    padding: 1vh 0;
 }
 
-.block:hover .block_image {
-    display: block;
-    text-align: center;
+.block_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #A9A9A9;
-    color: black;
-    margin-bottom: 15px;
 }
 
 .block_check {
     appearance: none;
-}
-
-.block_check:checked ~ .block_image {
     display: block;
-    text-align: center;
-    background-color: #A9A9A9;
-    margin-bottom: 15px;
+    margin: 0;
 }
 
 .block_check:checked ~ .block_title {
+    overflow: visible;
+    max-height: 70vh;
     color: black;
-}
-
-.block_check:checked + .plus {
-    transform: rotate(45deg);
-}
-
-.block_image {
-    display: none;
 }
 
 .mem {
     width: 80%;
-    height: 80%;
+}
+
+.title-plus {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.5vh;
+}
+
+.plus {
+    max-width: 0;
+    max-height: 0;
+}
+
+.accordion:hover .plus {
+    max-width: 3.5vw;
+    max-height: 3.5vh;
+}
+
+.block_check:checked + .block_title .title-plus .plus {
+    transform: rotate(45deg);
+}
+
+@media (min-width: 320px) {
+	.block_image {
+        margin: 2vh auto 0 auto;
+        max-width: 80%;
+    }
+
+    .task-name {
+        font-size: 4vh;
+        margin: 3vh 0;
+    } 
+    
+    .title {
+        font-size: 3vh;
+    }
+
+    .subtitle {
+        font-size: 3vh;
+    }
 }
 
 @media (min-width: 576px) {
-	.container {
-		max-width: 380px
-	}
-    p {
-        font-size: 32px;
-    }
-    .title {
-        font-size: 22px;
-    }
-	h1 {
-		font-size: 36px;
+	.block_image {
+        max-width: 55%;
     }
 }
 
 @media (min-width: 820px) {
-	.container {
-		max-width: 580px
-	}
-    p {
-        font-size: 38px;
+	.title {
+        font-size: 4vh;
     }
-    .title {
-        font-size: 25px;
-    }
-	h1 {
-		font-size: 38px;
-        padding: 30px 0;
-    }
-    .plus {
-        height: 23px;
-        width: 23px;
-    }
-    .block:hover .block_image {
-        width: 50%;
-    }
-    .block_check:checked ~ .block_image {
-        width: 50%;
-    }
-}
 
-@media (min-width: 1200px) {
-	.container {
-		max-width: 880px
-	}
-    p {
-        font-size: 46px;
+    .task-name {
+        font-size: 5vh;
     }
-    .title {
-        font-size: 27px;
-    }
-    .plus {
-        height: 25px;
-        width: 25px;
-    }
-}
 
-@media (min-width: 1600px) {
-	.container {
-		max-width: 1100px
-	}
-    p {
-        font-size: 68px;
-    }
-    .title {
-        font-size: 35px;
-    }
-	h1 {
-		font-size: 48px;
-    }
-    .plus {
-        height: 27px;
-        width: 27px;
+    .subtitle {
+        font-size: 4vh;
     }
 }
 
 @media (min-width: 1920px) {
-	.container {
-		max-width: 1350px
-	}
-    p {
-        font-size: 76px;
+	.title {
+        font-size: 5vh;
     }
-    .title {
-        font-size: 43px;
+
+    .task-name {
+        font-size: 6vh;
     }
-	h1 {
-		font-size: 52px;
-        padding: 45px 0;
-    }
-    .block_title {
-        padding: 5px 0 20px 0;
-    }
-    .block:hover .block_image {
-        margin-bottom: 30px;
-    }
-    .block_check:checked ~ .block_image {
-        margin-bottom: 20px;
-    }
-    .plus {
-        height: 30px;
-        width: 30px;
+
+    .subtitle {
+        font-size: 5.5vh;
     }
 }
