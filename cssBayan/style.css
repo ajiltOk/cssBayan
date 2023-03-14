@@ -66,14 +66,6 @@ body {
     height: 5.5vh;
 }
 
-.plus {
-    max-width: 0;
-    max-height: 0;
-}
-
-.block_check:checked + .block_title .title-plus .plus {
-    transform: rotate(45deg);
-}
 
 @media (min-width: 320px) {
 	.block_image {
@@ -155,8 +147,26 @@ body {
         max-height: 75vh;
     }
 
+    .block_title:hover .title-plus .plus {
+        transform: rotate(45deg);
+    }
+
+    .plus {
+        max-width: 0;
+        max-height: 0;
+    }
+
     .accordion:hover .plus {
         max-width: 3.5vw;
         max-height: 3.5vh;
+        cursor: pointer;
+    }
+
+    .block_title:active .title-plus .title {
+        color: blue;
+    }
+
+    .block_title:active {
+        opacity: 0.7;
     }
 }
