@@ -1,0 +1,174 @@
+body {
+    background-color: #F5DEB3;
+    color: blue;
+}
+
+.container {
+    margin: auto;
+    max-width: 60%;
+    overflow: hidden;
+}
+
+.task-name {
+    color: black;
+}
+
+.block_title {
+    display: block;
+    cursor: pointer;
+    max-height: 5.5vh;
+    overflow: hidden;
+    border-top: 0.2vh solid gray;
+    transition: all 0.3s ease-out;
+    padding: 2vh 0;
+}
+
+.title {
+    display: block;
+    cursor: pointer;
+    transition: color 0.2s ease-out;
+    margin: 0;
+}
+
+.subtitle {
+    margin: 0;
+    color: white;
+    padding: 1vh 0;
+}
+
+.block_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #A9A9A9;
+}
+
+.block_check {
+    appearance: none;
+    display: block;
+    margin: 0;
+}
+
+.block_check:checked ~ .block_title {
+    overflow: visible;
+    max-height: 75vh;
+    color: black;
+}
+
+.mem {
+    width: 80%;
+}
+
+.title-plus {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.5vh;
+}
+
+
+@media (min-width: 320px) {
+	.block_image {
+        margin: 2vh auto 0 auto;
+        max-width: 80%;
+    }
+
+    .task-name {
+        font-size: 4vh;
+        margin: 3vh 0;
+    } 
+    
+    .title {
+        font-size: 3vh;
+    }
+
+    .subtitle {
+        font-size: 3vh;
+    }
+
+    .block_check:checked ~ .block_title {
+        cursor: pointer;
+        overflow: visible;
+        max-height: 75vh;
+    }
+
+    .plus {
+        max-width: 3.5vw;
+        max-height: 3.5vh;
+        transition: all 0.2s ease-out;
+    }
+
+    .block_check:checked + .block_title .title-plus .plus {
+        transform: rotate(45deg);
+    }
+}
+
+@media (min-width: 576px) {
+	.block_image {
+        max-width: 55%;
+    }
+}
+
+@media (min-width: 820px) {
+	.title {
+        font-size: 4vh;
+    }
+
+    .task-name {
+        font-size: 5vh;
+    }
+
+    .subtitle {
+        font-size: 4vh;
+    }
+
+}
+
+@media (min-width: 1200px) {
+	.title {
+        font-size: 5vh;
+    }
+
+    .task-name {
+        font-size: 6vh;
+    }
+
+    .subtitle {
+        font-size: 5.5vh;
+    }
+
+    .accordion:hover {
+        cursor: pointer;
+        color: black;
+    }
+    
+    .block_title:hover {
+        cursor: pointer;
+        overflow: visible;
+        max-height: 75vh;
+    }
+
+    .block_title:hover .title-plus .plus {
+        transform: rotate(45deg);
+    }
+
+    .plus {
+        max-width: 0;
+        max-height: 0;
+        transition: all 0.2s ease-out;
+    }
+
+    .accordion:hover .plus {
+        max-width: 3.5vw;
+        max-height: 3.5vh;
+        cursor: pointer;
+    }
+
+    .block_title:active .title-plus .title {
+        color: blue;
+    }
+
+    .block_title:active {
+        opacity: 0.7;
+    }
+}
