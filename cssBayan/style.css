@@ -6,21 +6,11 @@ body {
 .container {
     margin: auto;
     max-width: 60%;
+    overflow: hidden;
 }
 
 .task-name {
     color: black;
-}
-
-.accordion:hover {
-    cursor: pointer;
-    color: black;
-}
-
-.block_title:hover {
-    cursor: pointer;
-    overflow: visible;
-    max-height: 70vh;
 }
 
 .block_title {
@@ -61,7 +51,7 @@ body {
 
 .block_check:checked ~ .block_title {
     overflow: visible;
-    max-height: 70vh;
+    max-height: 75vh;
     color: black;
 }
 
@@ -79,11 +69,6 @@ body {
 .plus {
     max-width: 0;
     max-height: 0;
-}
-
-.accordion:hover .plus {
-    max-width: 3.5vw;
-    max-height: 3.5vh;
 }
 
 .block_check:checked + .block_title .title-plus .plus {
@@ -108,6 +93,21 @@ body {
     .subtitle {
         font-size: 3vh;
     }
+
+    .block_check:checked ~ .block_title {
+        cursor: pointer;
+        overflow: visible;
+        max-height: 75vh;
+    }
+
+    .plus {
+        max-width: 3.5vw;
+        max-height: 3.5vh;
+    }
+
+    .block_check:checked + .block_title .title-plus .plus {
+        transform: rotate(45deg);
+    }
 }
 
 @media (min-width: 576px) {
@@ -128,9 +128,10 @@ body {
     .subtitle {
         font-size: 4vh;
     }
+
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1200px) {
 	.title {
         font-size: 5vh;
     }
@@ -141,5 +142,21 @@ body {
 
     .subtitle {
         font-size: 5.5vh;
+    }
+
+    .accordion:hover {
+        cursor: pointer;
+        color: black;
+    }
+    
+    .block_title:hover {
+        cursor: pointer;
+        overflow: visible;
+        max-height: 75vh;
+    }
+
+    .accordion:hover .plus {
+        max-width: 3.5vw;
+        max-height: 3.5vh;
     }
 }
