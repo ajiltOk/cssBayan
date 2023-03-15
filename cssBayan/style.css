@@ -1,0 +1,151 @@
+body {
+    background-color: #F5DEB3;
+    color: blue;
+}
+
+.container {
+    margin: auto;
+    max-width: 70%;
+    overflow: hidden;
+}
+
+.block {
+    cursor: pointer;
+    border-top: 0.2vh solid gray;
+    padding: 2vh 0;
+}
+
+.task-name {
+    color: black;
+}
+
+.block_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.title {
+    display: block;
+    cursor: pointer;
+    transition: color 0.2s ease-out;
+    margin: 0;
+}
+
+.block_check {
+    appearance: none;
+    display: block;
+    margin: 0;
+}
+
+.mem {
+    max-height: 0;
+    max-width: 0;
+    cursor: pointer;
+    opacity: 0;
+    transition: max-height 1s, 1s;
+}
+
+.title-plus {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.block_check:checked +.block_title .title-plus .title {
+    color: black;
+}
+
+.block_check:checked +.block_title {
+    max-height: 75vh;
+}
+
+.block_check:checked + .block_title .mem {
+    max-height: 65vh;
+    max-width: 65vw;
+    opacity: 1;
+}
+
+@media (min-width: 320px) {
+    .task-name {
+        font-size: 4vh;
+        margin: 3vh 0;
+    } 
+    
+    .title {
+        font-size: 3vh;
+    }
+
+    .plus {
+        max-width: 3.5vw;
+        max-height: 3.5vh;
+        transition: 1s;
+    }
+
+    .block_check:checked + .block_title .title-plus .plus {
+        transform: rotate(45deg);
+    }
+}
+
+@media (min-width: 820px) {
+	.title {
+        font-size: 4vh;
+    }
+
+    .task-name {
+        font-size: 5vh;
+    }
+}
+
+@media (min-width: 1200px) {
+	.title {
+        font-size: 5vh;
+    }
+
+    .task-name {
+        font-size: 6vh;
+    }
+}
+
+@media (hover:hover) {
+    .plus {
+        max-width: 3.5vw;
+        max-height: 3.5vh;
+        opacity: 0;
+        transition: 1s;
+    }
+
+    .block:hover {
+        cursor: pointer;
+    }
+
+    .accordion:hover {
+        cursor: pointer;
+        color: black;
+    }
+
+    .block:hover .mem {
+        max-height: 65vh;
+        max-width: 65vw;
+        opacity: 1; 
+    }
+
+    .block:hover .plus {
+        transform: rotate(45deg);
+    }
+
+    .accordion:hover .plus {
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    .block_title:active .title {
+        color: blue;
+    }
+
+    .block_title:active {
+        opacity: 0.7;
+    }
+}
